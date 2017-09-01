@@ -105,8 +105,8 @@ export default {
           }
           // contentChange
           self.instance.on('contentChange', () => {
-            self.content = self.instance.getContent();
-            self.$emit('on-content-change', self.content);
+            self.vcontent = self.instance.getContent();
+            self.$emit('on-content-change', self.vcontent);
           });
 
           // emit ready
