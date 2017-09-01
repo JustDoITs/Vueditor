@@ -26,10 +26,8 @@ export default {
     },
   },
   data() {
-    const r = Math.random().toString(10).replace('0.', '');
-    const randomId = `vueditor-${r}`;
     return {
-      id: randomId,
+      id: `vueditor-${Math.random().toString(10).replace('0.', '')}`,
       vcontent: '',
       instance: null,
       defaultConfig: {
@@ -42,7 +40,7 @@ export default {
     };
   },
   mounted() {
-    this.createHeadElementAndLoadJs();
+    this.initialize();
   },
   beforeDestroy() {
     if (this.instance !== null && this.instance.destroy) {
